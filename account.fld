@@ -1,0 +1,7 @@
+*base 1000
+#name		number	type	flags	comments
+ID		1	long	-	-
+ACCOUNT		2	long	-	-
+USERNAME	3	string	-	-
+PASSWORD	4	string	-	-
+AMOUNTS		5	double	-	-

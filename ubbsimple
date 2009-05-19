@@ -1,0 +1,54 @@
+#	(c) 2003 BEA Systems, Inc. All Rights Reserved.
+#ident	"@(#) samples/atmi/simpapp/ubbsimple	$Revision: 1.5 $"
+
+#Skeleton UBBCONFIG file for the TUXEDO Simple Application.
+#Replace the <bracketed> items with the appropriate values.
+
+*RESOURCES
+IPCKEY		123456
+
+#Example:
+#IPCKEY		123456
+
+DOMAINID	sample
+MASTER		panchenliang
+MAXACCESSERS	10
+MAXSERVERS	5
+MAXSERVICES	10
+MODEL		SHM
+LDBAL		N
+
+*MACHINES
+DEFAULT:
+		APPDIR="/home/panchenliang/tux/samples/atmi/simpapp"
+		TUXCONFIG="/home/panchenliang/tux/tuxconfig"
+		TUXDIR="/home/panchenliang/tux"
+		MAXWSCLIENTS=5
+#Example:
+#
+#		APPDIR="/home/me/simpapp"
+#		TUXCONFIG="/home/me/simpapp/tuxconfig"
+#		TUXDIR="/usr/tuxedo"
+
+
+panchenliang
+		LMID=panchenliang
+
+#Example:
+#beatux		LMID=simple
+
+*GROUPS
+"GROUP1"	LMID=panchenliang	GRPNO=4	OPENINFO=NONE
+#JSLGRP		LMID=panchenliang	GRPNO=5
+#JREPGRP		LMID=panchenliang	GRPNO=6
+
+*SERVERS
+
+simpserv	SRVGRP=GROUP1	SRVID=1
+login		SRVGRP=GROUP1	SRVID=2
+#JSL		SRVGRP=JSLGRP	SRVID=301
+#CLOPT="-A -- -n //127.0.0.1:8888 -M 10 -x 10 -m 2"
+#JREPSVR		SRVGRP=JREPGRP	SRVID=302
+#CLOPT="-A -- -W -P /home/panchenliang/tux/udataobj/jolt/repository/jrepository"
+*SERVICES
+TOUPPER
